@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app='app' ng-controller='showIncident'>
+<head>
+<title>{{pageTitle}}</title>
+<script type="text/javascript" src="lib\angular_1_5_8.js"></script>
+<script type="text/javascript" src="lib\angular-route.min.js"></script>
+<style>
+th, td {
+	border: 2px double black;
+	cursor: pointer;
+}
+</style>
+</head>
+<body>
+	<h1>{{pageTitle}}</h1>
+	<div>
+		Search &nbsp&nbsp<input type="text" ng-model="query"><br>
+		<br>
+		<table style="border: 2px solid black">
+			<tr>
+				<th>Number</th>
+				<th>Environment</th>
+				<th>Project</th>
+			</tr>
+			<tr ng-repeat='incident in incidents'>
+				<td>{{incident.number}}</td>
+				<td>{{incident.environment}}</td>
+				<td>{{incident.project}}</td>
+			</tr>
+		</table>
+	</div>
+
+
+	<script type="text/javascript" src="js\app.js"></script>
+</body>
+</html>
